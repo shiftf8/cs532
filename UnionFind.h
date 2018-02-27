@@ -1,12 +1,20 @@
+#ifndef UnionFind_h
+#define UnionFind_h
+
 class UnionFind
 {
-    private:
-        int total_number_of_elements;
-        
-        
     public:
         UnionFind(int n);
-        wUnion(int e1, int e2);
-        pcFind(int e);
-        printArray();
+        void wUnion(int e1, int e2);
+        int pcFind(int e);
+        void printArray();
+        
+        int TotalNumberOfElements() const;
+        const int& ParentOfElementN(int ElementN) const;
+
+    private:
+        int aTotalNumberOfELements;
+        int *pParentArray;
 };
+
+#endif
