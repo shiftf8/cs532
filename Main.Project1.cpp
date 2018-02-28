@@ -6,15 +6,15 @@ int main()
         // initialize a forest with 4 elements (0 – 3)
     UnionFind ForestWithFourElements = UnionFind(4);
     // std::cout <<ForestWithFourElements.TotalNumberOfElements() <<" - " <<ForestWithFourElements.ParentOfElementN(3) <<std::endl;
-    std::cout <<ForestWithFourElements.pcFind(3) <<std::endl;
+    // std::cout <<ForestWithFourElements.pcFind(2) <<std::endl;
 
-    // ForestWithFourElements.wUnion(0, 1);
+    ForestWithFourElements.wUnion(0, 1);
     // std::cout <<ForestWithFourElements.ParentOfElementN(1) <<std::endl;
-    // ForestWithFourElements.wUnion(2, 0);
-    // std::cout <<ForestWithFourElements.ParentOfElementN(0) <<std::endl;
-    // ForestWithFourElements.wUnion(3, 0);
-    // std::cout <<"3, "
-    // ForestWithFourElements.printArray();
+    ForestWithFourElements.wUnion(2, 0);
+    // std::cout <<ForestWithFourElements.ParentOfElementN(2) <<std::endl;
+    ForestWithFourElements.wUnion(3, 0);
+    std::cout <<"\n-4, 0, 0, 0\n";
+    ForestWithFourElements.printArray();
         // initialize a forest with 12 elements (0 – 11)
     // wUnion(0, 1);
     // wUnion(2, 3);
