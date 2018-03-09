@@ -3,8 +3,8 @@
 
 UnionFind::UnionFind(int n)
 {
-    aTotalNumberOfELements = n;
-    pParentArray = new int[aTotalNumberOfELements]();
+    aTotalNumberOfElements = n;
+    pParentArray = new int[aTotalNumberOfElements]();
     for (int i = 0; i < n; ++i)
     {
         //Root will keep track of number of elements in each tree via decrementing
@@ -28,11 +28,13 @@ void UnionFind::wUnion(int e1, int e2)
 int UnionFind::pcFind(int e)
 {
     int p;
+    int grandparent;
     
     /* Original code block given */
     p = pParentArray[e];
+    grandparent = pParentArray[p];
 
-    while (p != -1)
+    while (p >= -1 && grandparent >= -1) //c++ logic needs double check to prevent out of bounds lookup
     {
         e = p;
         p = pParentArray[e];
@@ -43,14 +45,14 @@ int UnionFind::pcFind(int e)
 }
 void UnionFind::printArray()
 {
-    for (int i = 0; i < aTotalNumberOfELements; ++i)
+    for (int i = 0; i < aTotalNumberOfElements; ++i)
     {
         std::cout <<pParentArray[i];
-        if (i < aTotalNumberOfELements - 1) std::cout <<", ";
+        if (i < aTotalNumberOfElements - 1) std::cout <<", ";
     }
     std::cout <<"\n";
 }
 
 
-int UnionFind::TotalNumberOfElements() const { return aTotalNumberOfELements; }
+int UnionFind::TotalNumberOfElements() const { return aTotalNumberOfElements; }
 const int& UnionFind::ParentOfElementN(int ElementN) const { return pParentArray[ElementN]; }

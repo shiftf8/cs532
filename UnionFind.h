@@ -13,7 +13,7 @@ class UnionFind
         const int& ParentOfElementN(int ElementN) const;
 
     private:
-        int aTotalNumberOfELements;
+        int aTotalNumberOfElements;
         int *pParentArray;
 };
 
